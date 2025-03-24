@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "“piris.DomainService", "“piris.DomainService\“piris.DomainService.csproj", "{853E976F-0E58-474F-941E-9F7BFA12FA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "лаба 2 ПиРИС", "лаба 2 ПиРИС\лаба 2 ПиРИС.csproj", "{3DBA4206-20C6-806B-616D-02C19CC4901C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{853E976F-0E58-474F-941E-9F7BFA12FA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853E976F-0E58-474F-941E-9F7BFA12FA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853E976F-0E58-474F-941E-9F7BFA12FA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853E976F-0E58-474F-941E-9F7BFA12FA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBA4206-20C6-806B-616D-02C19CC4901C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBA4206-20C6-806B-616D-02C19CC4901C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBA4206-20C6-806B-616D-02C19CC4901C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBA4206-20C6-806B-616D-02C19CC4901C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A607471-8C55-46A3-88D7-497254FCC6BD}
+	EndGlobalSection
+EndGlobal
