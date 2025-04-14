@@ -136,6 +136,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AuthService.svc" />
+    <Content Include="CentralBankService.svc" />
     <Content Include="DbContext\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -146,10 +148,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Service1.svc" />
+    <Content Include="DatabaseService.svc" />
+    <Content Include="PositionService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthService.svc.cs">
+      <DependentUpon>AuthService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CentralBankService.svc.cs">
+      <DependentUpon>CentralBankService.svc</DependentUpon>
+    </Compile>
     <Compile Include="DbContext\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,10 +180,17 @@
     <Compile Include="DbContext\store_users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="DatabaseService.svc.cs">
+      <DependentUpon>DatabaseService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IAuthService.cs" />
+    <Compile Include="ICentralBankService.cs" />
+    <Compile Include="IDatabaseService.cs" />
+    <Compile Include="IPositionService.cs" />
+    <Compile Include="PositionObject.cs" />
+    <Compile Include="PositionService.svc.cs">
+      <DependentUpon>PositionService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

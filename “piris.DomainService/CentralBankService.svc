@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="_piris.DomainService.CentralBankService" CodeBehind="CentralBankService.svc.cs" %>
