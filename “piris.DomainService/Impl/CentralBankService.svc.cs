@@ -4,12 +4,15 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Net.Http;
+using Newtonsoft.Json;
+using DomainService.Objects;
 
 namespace _piris.DomainService
 {
     public class CentralBankService : ICentralBankService
     {
-        private string _apiUrl = "https://www.cbr-xmldaily.ru/daily_json.js"; 
+        private string _apiUrl = "https://www.cbr-xml-daily.ru/daily_json.js"; 
         public ConverterObject ConvertValue(double value, string currencyName)
         {
             ConverterObject converterRes = new
@@ -28,19 +31,19 @@ namespace _piris.DomainService
                     switch (currencyName)
                     {
                         case "EUR":
-                            converterRes.currencyValue = value / desResult.Valute.EUR.Value;
+                            converterRes.currencyValue = value / desResult.Valute["EUR"].Value;
                             converterRes.currencyName = "EUR";
                             break;
                         case "USD":
-                            converterRes.currencyValue = value / desResult.Valute.USD.Value;
+                            converterRes.currencyValue = value / desResult.Valute["USD"].Value;
                             converterRes.currencyName = "USD";
                             break;
                         case "KZT":
-                            converterRes.currencyValue = value / desResult.Valute.KZT.Value;
+                            converterRes.currencyValue = value / desResult.Valute["KZT"].Value;
                             converterRes.currencyName = "KZT";
                             break;
                         case "CNY":
-                            converterRes.currencyValue = value / desResult.Valute.CNY.Value;
+                            converterRes.currencyValue = value / desResult.Valute["CNY"].Value;
                             converterRes.currencyName = "CNY";
                             break;
                         default:

@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\“piris.DomainService\“piris.DomainService.csproj">
+      <Project>{853E976F-0E58-474F-941E-9F7BFA12FA18}</Project>
+      <Name>“piris.DomainService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

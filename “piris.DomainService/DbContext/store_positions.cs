@@ -15,6 +15,7 @@ namespace _piris.DomainService.DbContext
     public partial class store_positions
     {
         public sbyte id { get; set; }
+        public int Id { get; internal set; }
         public string positionName { get; set; }
         public string positionType { get; set; }
         public int positionValue { get; set; }

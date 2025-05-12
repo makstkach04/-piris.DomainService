@@ -9,11 +9,11 @@ namespace _piris.DomainService.Objects
     {
         public int Id { get; set; }
         public string PositionName { get; set; }
-        public PositionType PositionType { get; set; }
+        public string PositionType { get; set; }
         public int PositionValue { get; set; }
         public string PositionCurrency { get; set; }
-        public double PositionPrice { get; set; }
-        public string PriceCurrency { get; set; }
+        public int PositionPrice { get; set; }
+        public int PriceCurrency { get; set; }
     }
     public enum PositionType
     {

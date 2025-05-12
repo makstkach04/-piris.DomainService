@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _piris.DomainService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,18 @@ namespace WpfApp1
         {
             {
                 // Происходит запрос к серверу на сайт ЦБ, должна 
+                CentralBankService service = new CentralBankService();
+                var USD_res = service.ConvertValue(100, "USD");
+                var EUR_res = service.ConvertValue(100, "EUR");
+                var CNY_res = service.ConvertValue(100, "CNY");
                 lbQuotes.Items.Clear();
-                lbQuotes.Items.Add("75,47 USD");
-                lbQuotes.Items.Add("80,24 EUR");
-                lbQuotes.Items.Add("10,88 CNY");
+                lbQuotes.Items.Add($"{Math.Round(USD_res.currencyValue, 2)} USD"); 
+                lbQuotes.Items.Add($"{Math.Round(EUR_res.currencyValue, 2)} EUR"); 
+                lbQuotes.Items.Add($"{Math.Round(CNY_res.currencyValue, 2)} CNY"); 
                 lbQuotes.SelectedIndex = 0;
             }
         }
+        
         private void bAdd_Click(object sender, RoutedEventArgs e)
         {
             // Добавление элемента в БД 
@@ -50,8 +56,7 @@ namespace WpfApp1
             string[] strings =
             lbQuotes.SelectedItem.ToString().Split(' ');
             item.PriceCurrency =
-            Math.Round(double.Parse(tbPosPrice.Text) /
-            double.Parse(strings[0]), 2);
+            Math.Round(double.Parse(tbPosPrice.Text) / 100 * double.Parse(strings[0]), 2);
             dgMain.Items.Add(item);
         }
 

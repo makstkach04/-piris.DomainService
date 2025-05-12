@@ -14,25 +14,25 @@ namespace _piris.DomainService
     {
         private static DatabaseService _databaseService = new
         DatabaseService();
-        public bool UserAuth(UserRegistration userObj)
+        public bool UserAuth(store_users userObj)
         {
         var res =
-        _databaseService.GetUserByUserName(userObj.UserName);
+        _databaseService.GetUserByUserName(userObj.userName);
             if (res == null)
             {
                 return false;
             }
-            if (userObj.Password == res.userPassword)
+            if (userObj.userPassword == res.userPassword)
             {
                 return true;
             }
             return true;
         }
-        public bool UserRegistration(UserRegistration userObj)
+        public bool UserRegistration(store_users userObj)
         {
             store_users dbUser = new store_users();
-            dbUser.userName = userObj.UserName;
-            dbUser.userPassword = userObj.Password;
+            dbUser.userName = userObj.userName;
+            dbUser.userPassword = userObj.userPassword;
             var res = _databaseService.CreateUser(dbUser);
             return res;
         }

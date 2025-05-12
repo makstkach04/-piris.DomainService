@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Web;
+using _piris.DomainService.DbContext;
 
 namespace _piris.DomainService
 {
@@ -10,8 +11,8 @@ namespace _piris.DomainService
     public interface IAuthService
     {
         [OperationContract]
-        bool UserRegistration(UserRegistration userObj);
+        bool UserRegistration(store_users userObj);
         [OperationContract]
-        bool UserAuth(UserRegistration userObj);
+        bool UserAuth(store_users userObj);
     }
 }

@@ -11,20 +11,16 @@ namespace _piris.DomainService
 {
     public class PositionService : IPositionService
     {
-        private static DatabaseService _databaseService = new
-DatabaseService();
-
+        private static DatabaseService _databaseService = new DatabaseService();
         public bool AddPosition(PositionObject position)
         {
-
             store_positions dbPos = new store_positions();
             dbPos.positionCurrency = position.PositionCurrency;
             dbPos.positionName = position.PositionName;
             dbPos.positionPrice = position.PositionPrice;
-            dbPos.positionType = (int)position.PositionType;
+            dbPos.positionType = position.PositionType;
             dbPos.positionValue = position.PositionValue;
             dbPos.priceCurrency = position.PriceCurrency;
-
             _databaseService.AddPosition(dbPos);
             return true;
         }
@@ -39,15 +35,12 @@ DatabaseService();
         {
             var res = _databaseService.GetPositionById(id);
 
-            PositionObject positionObject = new
-PositionObject();
+            PositionObject positionObject = new PositionObject();
             positionObject.Id = res.id;
-            positionObject.PositionCurrency =
-res.positionCurrency;
+            positionObject.PositionCurrency = res.positionCurrency;
             positionObject.PositionName = res.positionName;
             positionObject.PositionPrice = res.positionPrice;
-            positionObject.PositionType =
-(PositionType)res.positionType;
+            positionObject.PositionType = res.positionType;
 
             positionObject.PositionValue = res.positionValue;
             positionObject.PriceCurrency = res.priceCurrency;
@@ -70,8 +63,7 @@ List<PositionObject>();
                     PositionCurrency = item.positionCurrency,
                     PositionName = item.positionName,
                     PositionPrice = item.positionPrice,
-                    PositionType =
-(PositionType)positionType,
+                    PositionType = positionType,
                     PositionValue = item.positionValue,
                     PriceCurrency = item.priceCurrency
                 });
@@ -82,11 +74,11 @@ List<PositionObject>();
         public bool UpdatePosition(PositionObject position)
         {
             store_positions dbPos = new store_positions();
-            dbPos.id = position.Id;
+            dbPos.Id = position.Id;
             dbPos.positionCurrency = position.PositionCurrency;
             dbPos.positionName = position.PositionName;
             dbPos.positionPrice = position.PositionPrice;
-            dbPos.positionType = (int)position.PositionType;
+            dbPos.positionType = position.PositionType;
             dbPos.positionValue = position.PositionValue;
             dbPos.priceCurrency = position.PriceCurrency;
 
